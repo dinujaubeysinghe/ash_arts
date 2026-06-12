@@ -5,7 +5,7 @@ const categoryRoutes = [
   { label: 'All Works',          to: '/gallery'                  },
   { label: 'Pencil Art',         to: '/gallery/pencil-art'       },
   { label: 'Social Media Posts', to: '/gallery/social-media'     },
-  { label: 'Business Cards',     to: '/gallery/business-cards'   },
+  { label: 'Brand Designs',      to: '/gallery/brand-designs'    },
   { label: 'Printing Designs',   to: '/gallery/printing-designs' },
   { label: 'Thumbnails',         to: '/gallery/thumbnails'       },
   { label: 'Manipulations',      to: '/gallery/manipulations'    },

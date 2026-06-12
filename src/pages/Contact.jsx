@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaBehance } from 'react-icons/fa'
 
 const subjects = [
-  'Pencil Arts',
-  'Live Drawing Event',
-  'Thumbnail Design',
-  'T-Shirt Design',
-  'Business Card Design',
-  'Social Media Post Design',
-  'Other',
+  {name :'Pencil Arts', link: '/gallery/pencil-art'},
+  {name :'Social Media Design', link: '/gallery/social-media-design'},
+  {name :'Brand Design', link: '/gallery/brand-design'},
+  {name :'Printing Design', link: '/gallery/printing-design'},
+  {name :'Thumbnails', link: '/gallery/thumbnails'},
+  {name :'Manipulations', link: '/gallery/manipulations'},
+  {name :'UI/UX Design', link: '/gallery/ui-ux-design'},
 ]
 
 const ContactPage = () => {
@@ -99,7 +99,9 @@ const ContactPage = () => {
                   <select value={form.subject} onChange={update('subject')}
                     className={inputClass + ' cursor-pointer'}>
                     {subjects.map(s => (
-                      <option key={s} value={s}>{s}</option>
+                      <option key={s.name} value={s.name}>
+                        {s.name}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -137,7 +139,7 @@ const ContactPage = () => {
               <p className={labelClass}>About</p>
               <p className='font-body text-[clamp(14px,1.6vw,16px)] text-[#444441] leading-relaxed'>
                 Whether it's a custom pencil portrait, a brand identity, or a creative design
-                project — Ashen works closely with each client to bring their vision to life.
+                project, I work closely with each client to bring their vision to life.
                 Every project starts with a conversation.
               </p>
             </div>
@@ -146,11 +148,13 @@ const ContactPage = () => {
             <div>
               <p className={labelClass}>Services</p>
               <div className='flex flex-col gap-0'>
-                {subjects.filter(s => s !== 'Other').map((s, i) => (
-                  <div key={s}
-                    className='flex items-center justify-between py-3 border-b border-gray-100'>
-                    <span className='font-body text-sm text-[#444441]'>{s}</span>
-                  </div>
+                {subjects.filter(s => s.name !== 'Other').map((s, i) => (
+                  <a key={s.name  + i} href={s.link}
+                    className='flex items-center justify-between py-3 border-b border-gray-100
+                      font-body text-sm text-[#444441] hover:text-[#2C2C2A] transition-colors'>
+                    <span>{s.name}</span>
+                    <span className='text-[#888780] font-body'>→</span>
+                  </a>
                 ))}
               </div>
             </div>
@@ -159,10 +163,10 @@ const ContactPage = () => {
             <div>
               <p className={labelClass}>Direct contact</p>
               <div className='flex flex-col gap-3'>
-                <a href='mailto:contact@asharts.lk'
+                <a href='mailto:contact.asharts@gmail.com'
                   className='font-body text-sm text-[#444441] hover:text-[#2C2C2A] transition-colors flex items-center gap-3'>
                   <span className='text-[#888780] font-body'>—</span>
-                  contact@asharts.lk
+                  contact.asharts@gmail.com
                 </a>
                 <a href='https://wa.me/94XXXXXXXXX' target='_blank' rel='noopener noreferrer'
                   className='font-body text-sm text-[#444441] hover:text-[#2C2C2A] transition-colors flex items-center gap-3'>

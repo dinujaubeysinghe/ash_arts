@@ -17,14 +17,14 @@ import { useState } from 'react'
 
 const works = [
   { id: 1, img: ab1,  category: 'Thumbnail'  },
-  { id: 2, img: p1,  category: 'Portrait' },
+  { id: 2, img: p1,  category: 'Pencil Art' },
   { id: 3, img: p2, category: 'Social Media'  },
   { id: 4, img: p6,  category: 'Thumbnail'  },
   { id: 5, img: p8,  category: 'Manipulation' },
   { id: 6, img: p4, category: 'UI/UX Design'  },
   { id: 7, img: p9, category: 'Social Media'  },
   { id: 8, img: p7, category: 'Logo Design' },
-  { id: 9, img: p5, category: 'Portrait'  },
+  { id: 9, img: p5, category: 'Pencil Art'  },
 ]
 
 const ProjectCard = ({ works }) => {
@@ -56,10 +56,10 @@ const HomePage = () => {
       <div className='px-5 sm:px-10 md:px-16 lg:px-20 mt-2 lg:mt-1 leading-none'>
         <div className='font-heading font-bold text-[#2C2C2A]'>
           <h1 className='text-[clamp(32px,7vw,72px)] leading-none'>
-            Ashen Dewinda
+            ASH DESIGN STUDIO
           </h1>
           <span className='font-heading italic text-[clamp(14px,3vw,30px)] text-[#888780] leading-none'>
-            ASH DESIGN STUDIO
+            Ashen Dewinda
           </span>
         </div>
       </div>

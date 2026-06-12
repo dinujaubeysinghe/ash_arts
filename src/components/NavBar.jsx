@@ -3,14 +3,14 @@ import { NavLink, useLocation } from 'react-router-dom'
 import logo from '../assets/home/ashenlogo.webp'
 
 const galleryItems = [
-  { to: '/gallery',                  label: 'All Works'          },
-  { to: '/gallery/pencil-art',       label: 'Pencil Art'         },
+  { to: '/gallery',                  label: 'All Works'},
+  { to: '/gallery/pencil-art',       label: 'Pencil Art' },
   { to: '/gallery/social-media',     label: 'Social Media Posts' },
-  { to: '/gallery/business-cards',   label: 'Business Cards'     },
-  { to: '/gallery/printing-designs', label: 'Printing Designs'   },
-  { to: '/gallery/thumbnails',       label: 'Thumbnails'         },
-  { to: '/gallery/manipulations',    label: 'Manipulations'      },
-  { to: '/gallery/uiux-designs',     label: 'UI/UX Designs'      },
+  { to: '/gallery/brand-designs',   label: 'Brand Designs'},
+  { to: '/gallery/printing-designs', label: 'Printing Designs'},
+  { to: '/gallery/thumbnails',       label: 'Thumbnails'},
+  { to: '/gallery/manipulations',    label: 'Manipulations' },
+  { to: '/gallery/uiux-designs',     label: 'UI/UX Designs' },
 ]
 
 const NavBar = () => {
