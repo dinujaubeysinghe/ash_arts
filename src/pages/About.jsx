@@ -1,5 +1,5 @@
 import React from 'react'
-import hero from '../assets/home/ashen.png'
+import hero from '../assets/about/ash.webp'
 
 const About = () => {
   return (
