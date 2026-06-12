@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import GalleryFilter from '../../components/GalleryFilter'
 
+import { motion } from 'framer-motion'
+
 import g1 from '../../assets/gallery/all/tshirt/2.webp'
 import g2 from '../../assets/gallery/all/tshirt/3.webp'
 import g3 from '../../assets/gallery/all/tshirt/5.webp'
@@ -41,8 +43,11 @@ const ProjectCard = ({ works }) => {
 
 export default function PrintingDesigns() {
   return (
-    <div>
-        <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+      <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
         <h1 className='font-heading font-bold text-[clamp(40px,7vw,88px)] text-[#2C2C2A] leading-none mb-6'>
           Printing Designs
         </h1>
@@ -61,6 +66,6 @@ export default function PrintingDesigns() {
         </div>
       </section>
       </GalleryFilter>
-    </div>
+    </motion.div>
   )
 }

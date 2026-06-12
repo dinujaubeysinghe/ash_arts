@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import GalleryFilter from '../../components/GalleryFilter'
 
+import { motion } from 'framer-motion'
+
 import g1  from '../../assets/gallery/all/socail media/20250523.webp'
 import g2  from '../../assets/gallery/all/socail media/20250912.webp'
 import g3  from '../../assets/gallery/all/socail media/20250913.webp'
@@ -131,12 +133,15 @@ const ProjectCard = ({ works }) => {
 
 export default function SocialMedia() {
   return (
-   <div>
-           <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
-           <h1 className='font-heading font-bold text-[clamp(40px,7vw,88px)] text-[#2C2C2A] leading-none mb-6'>
-              Social Media Designs
-           </h1>
-           <p className='font-body text-sm text-[#444441] max-w-2xl leading-relaxed mb-2'>
+   <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+      <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
+        <h1 className='font-heading font-bold text-[clamp(40px,7vw,88px)] text-[#2C2C2A] leading-none mb-6'>
+          Social Media Designs
+        </h1>
+        <p className='font-body text-sm text-[#444441] max-w-2xl leading-relaxed mb-2'>
              A collection of my social media design works, showcasing a range of subjects and styles. From Instagram posts to Facebook covers, each piece is a testament to the power of thoughtful design in the digital space.
            </p>
          </section>
@@ -151,6 +156,6 @@ export default function SocialMedia() {
            </div>
          </section>
          </GalleryFilter>
-       </div>
+       </motion.div>
   )
 }

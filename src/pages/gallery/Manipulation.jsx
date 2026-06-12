@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import GalleryFilter from '../../components/GalleryFilter'
 
+import { motion } from 'framer-motion'
+
 import g1 from '../../assets/gallery/all/manipulation/2026 new year.webp'
 import g2 from '../../assets/gallery/all/manipulation/National Doy day.webp'
 import g3 from '../../assets/gallery/all/manipulation/WhatsApp Image 2026-02-21 at 7.35.13 PM.webp'
@@ -47,12 +49,15 @@ const ProjectCard = ({ works }) => {
 
 export default function Manipulations() {
   return (
-   <div>
+   <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}>
            <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
            <h1 className='font-heading font-bold text-[clamp(40px,7vw,88px)] text-[#2C2C2A] leading-none mb-6'>
               Manipulations
            </h1>
-           <p className='font-body text-sm text-gray-400 max-w-2xl leading-relaxed mb-2'>
+           <p className='font-body text-sm text-[#444441] max-w-2xl leading-relaxed mb-2'>
              A collection of my digital manipulations, showcasing a range of subjects and styles. From surreal landscapes to abstract compositions, each piece is a testament to the endless possibilities of digital art.
            </p>
          </section>
@@ -67,6 +72,6 @@ export default function Manipulations() {
            </div>
          </section>
          </GalleryFilter>
-       </div>
+       </motion.div>
   )
 }

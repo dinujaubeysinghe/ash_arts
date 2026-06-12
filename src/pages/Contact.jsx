@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaBehance } from 'react-icons/fa'
 
+import { motion } from 'framer-motion'
+
 const subjects = [
-  {name :'Pencil Arts', link: '/gallery/pencil-art'},
-  {name :'Social Media Design', link: '/gallery/social-media-design'},
-  {name :'Brand Design', link: '/gallery/brand-design'},
-  {name :'Printing Design', link: '/gallery/printing-design'},
-  {name :'Thumbnails', link: '/gallery/thumbnails'},
-  {name :'Manipulations', link: '/gallery/manipulations'},
-  {name :'UI/UX Design', link: '/gallery/ui-ux-design'},
+  { name: 'Pencil Arts', link: '/gallery/pencil-art' },
+  { name: 'Social Media Design', link: '/gallery/social-media-design' },
+  { name: 'Brand Design', link: '/gallery/brand-design' },
+  { name: 'Printing Design', link: '/gallery/printing-design' },
+  { name: 'Thumbnails', link: '/gallery/thumbnails' },
+  { name: 'Manipulations', link: '/gallery/manipulations' },
+  { name: 'UI/UX Design', link: '/gallery/ui-ux-design' },
 ]
 
 const ContactPage = () => {
-  const [form,   setForm]   = useState({ name: '', email: '', subject: subjects[0], message: '' })
+  const [form, setForm] = useState({ name: '', email: '', subject: subjects[0], message: '' })
   const [status, setStatus] = useState('idle') // idle | sending | sent
 
   const update = (field) => (e) => setForm(f => ({ ...f, [field]: e.target.value }))
@@ -20,7 +22,7 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
-    // 🔌 Replace with your EmailJS call
+    // Replace with your EmailJS call
     await new Promise(r => setTimeout(r, 1400))
     setStatus('sent')
   }
@@ -37,15 +39,23 @@ const ContactPage = () => {
     <div className='min-h-screen'>
 
       {/* ── HEADER ───────────────────────────────── */}
-      <section className='px-5 sm:px-10 md:px-16 lg:px-20 pt-12 pb-10 border-b border-gray-100'>
+      <motion.section
+        className='px-5 sm:px-10 md:px-16 lg:px-20 pt-12 pb-10 border-b border-gray-100'
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}>
         <h1 className='font-heading font-bold text-[clamp(40px,7vw,88px)] text-[#2C2C2A] leading-none'>
           Get in<br />
           <em className='italic text-[#888780]'>touch</em>
         </h1>
-      </section>
+      </motion.section>
 
       {/* ── MAIN CONTENT ─────────────────────────── */}
-      <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-14 md:py-20'>
+      <motion.section
+        className='px-5 sm:px-10 md:px-16 lg:px-20 py-14 md:py-20'
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}>
         <div className='flex flex-col lg:flex-row gap-14 lg:gap-24'>
 
           {/*FORM ─────────────────────── */}
@@ -149,7 +159,7 @@ const ContactPage = () => {
               <p className={labelClass}>Services</p>
               <div className='flex flex-col gap-0'>
                 {subjects.filter(s => s.name !== 'Other').map((s, i) => (
-                  <a key={s.name  + i} href={s.link}
+                  <a key={s.name + i} href={s.link}
                     className='flex items-center justify-between py-3 border-b border-gray-100
                       font-body text-sm text-[#444441] hover:text-[#2C2C2A] transition-colors'>
                     <span>{s.name}</span>
@@ -178,9 +188,9 @@ const ContactPage = () => {
 
           </div>
 
-          
+
         </div>
-      </section>
+      </motion.section>
 
     </div>
   )

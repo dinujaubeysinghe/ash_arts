@@ -2,6 +2,8 @@ import React from 'react'
 import GalleryFilter from '../../components/GalleryFilter'
 import { useState } from 'react'
 
+import { motion } from 'framer-motion'
+
 import g1 from '../../assets/gallery/all/pencil/paa6.jpeg'
 import g2 from '../../assets/gallery/all/manipulation/nissan.webp'
 import g3 from '../../assets/home/ash4.jpeg'
@@ -101,8 +103,11 @@ const ProjectCard = ({ works }) => {
 
 export default function Gallery() {
   return (
-    <div>
-        <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}>
+      <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-6 md:py-20 lg:py-8'>
         <h1 className='font-heading font-bold text-[clamp(40px,7vw,88px)] text-[#2C2C2A] leading-none mb-6'>
           Gallery
         </h1>
@@ -121,6 +126,6 @@ export default function Gallery() {
         </div>
       </section>
       </GalleryFilter>
-    </div>
+    </motion.div>
   )
 }

@@ -1,11 +1,18 @@
 import React from 'react'
 import hero from '../assets/about/ash.webp'
 
+import { motion } from 'framer-motion'
+
 const About = () => {
   return (
     <div>
       <div className='px-5 sm:px-10 md:px-16 lg:px-20 mt-12 md:mt-6 lg:mt-12 leading-none'>
-              <img src={hero} alt='Ashen Dewinda' className='w-full h-auto rounded-sm' />
+        <motion.img
+          src={hero} alt='Ashen Dewinda' className='w-full h-auto rounded-sm'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
+        />
       </div>
       <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-16 md:py-24'>
         <div className='mb-8 md:mb-12 text-center'>
