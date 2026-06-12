@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className='w-full bg-[#2C2C2A]'>
 
       {/* Big brand name */}
-      <div className='border-b border-[#444441] px-11 md:px-14 lg:px-32 pt-6 md:py-8 '>
+      <div className='border-b border-[#444441] px-11 md:px-14 lg:px-28 pt-6 md:py-8 '>
         <h2 className='font-heading font-bold uppercase lg:tracking-[0.18em] text-[clamp(32px,8vw,100px)] text-[#D3D1C7] leading-none'>
           ASH DESIGN STUDIO
         </h2>
