@@ -19,7 +19,7 @@ export default function GalleryFilter({ children }) {
   return (
     <div className='min-h-screen'>
 
-      {/* ── FILTER STRIP ───────────────────────── */}
+      {/* ── FILTER ───────────────────────── */}
       <section className='px-5 sm:px-10 md:px-16 lg:px-20 py-5
         border-b border-gray-100 overflow-x-auto'>
         <div className='flex gap-2 min-w-max md:min-w-0 md:flex-wrap'>
