@@ -6,7 +6,7 @@ A professional portfolio website for **Ashen Dewinda**, a Sri Lankan artist and 
 
 ## Live Demo
 
-[ash-arts-gallery.vercel.app](https://ash-arts-gallery.vercel.app)
+[ash-arts-gallery.vercel.app](https://ash-arts.vercel.app/)
 
 ---
 
@@ -50,16 +50,13 @@ Ash Arts Gallery showcases a wide range of creative works including pencil art, 
 ### Prerequisites
 
 - Node.js v18+
-- npm or yarn
+- npm
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/ash-arts-gallery.git
-
-# Navigate into the project
-cd ash-arts-gallery
+https://github.com/dinujaubeysinghe/ash_arts
 
 # Install dependencies
 npm install
@@ -157,4 +154,4 @@ The project is deployed on [Vercel](https://vercel.com/). A `vercel.json` is inc
 
 ## Developer
 
-Developed by **Dinuja** — Frontend Developer
+Developed by **Dinuja** — Full Stack Developer
